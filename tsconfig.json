@@ -1,5 +1,9 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "checkJs": true,        // allow VS Code to read your JSDoc
+    "strict": false          // disables TypeScript strict checking
+  },
   "include": [".astro/types.d.ts", "**/*"],
   "exclude": ["dist"]
 }
