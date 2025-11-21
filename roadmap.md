@@ -1,23 +1,23 @@
 # Roadmap Worksheet for RAG Pipeline
 Backend:
-    - Express.js v5 (Node v22 + ES modules)
-    - Hugging Face Inference API via `@huggingface/inference` (InferenceClient)
-    - Postgres + `pgvector`
-    - `pg` (node-postgres driver)
-    - `pgvector` (Postgres vector extension)
-    - Your own custom RAG flow
-    - Security-aware architecture
-    - `dotenv` for config (accessing the `.env` file)
-    - zod (optional but recommended for input validation)(I am not sure about this route but keeping it as a note)
-    - `express-rate-limit` (security)
-Database:
-    - PostgreSQL
-    - `pgvector` extension
-    - SQL migrations (manual or with a tool like Postgrator)
-Frontend:
-    - Astro.js (vanilla JavaScript & optional components)
-    - Fetch POST -> `/chat`
-    - Possibly SSE or WebSocket streaming (I need to look into this but might be out of scope)
+    - Express.js v5 (Node v22 + ES modules) 
+    - Hugging Face Inference API via `@huggingface/inference` (InferenceClient) 
+    - Postgres + `pgvector` 
+    - `pg` (node-postgres driver) 
+    - `pgvector` (Postgres vector extension) 
+    - Your own custom RAG flow 
+    - Security-aware architecture 
+    - `dotenv` for config (accessing the `.env` file) 
+    - zod (optional but recommended for input validation)(I am not sure about this route but keeping it as a note) 
+    - `express-rate-limit` (security) 
+Database: 
+    - PostgreSQL 
+    - `pgvector` extension 
+    - SQL migrations (manual or with a tool like Postgrator) 
+Frontend: 
+    - Astro.js (vanilla JavaScript & optional components) 
+    - Fetch POST -> `/chat` 
+    - Possibly SSE or WebSocket streaming (I need to look into this but might be out of scope) 
 
 ## RAG Pipeline Dependency Graph
 ```scss
