@@ -22,7 +22,9 @@
 ## Using ES modules everywhere
 ```js
 import { something } from "./something.js";
-export function something() {}
+export function somethingElse() {
+   return something();
+}
 ```
 
 ## RAG Pipeline Dependency Graph
