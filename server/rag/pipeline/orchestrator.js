@@ -6,9 +6,13 @@ import { buildPrompt } from "./buildPrompt.js";
 // import { generateAnswer } from "../llm/generateAnswer.js"; //match function&filename and add when ready
 
 //temp variables:
-const embedText = async function(question){};
-const searchDocs = async function(qEmbedding, num){};
 const generateAnswer = async function(prompt){};
+const prompt = buildPrompt("What are common cold symptoms?", [
+  { id: 1, content: "The common cold often includes coughing, sneezing, and congestion." },
+  { id: 2, content: "Colds are typically mild and resolve within a week." }
+]);
+
+console.log("prompt: ", prompt);
 
 export async function rag(question) {
     const qEmbedding = await embedText(question);

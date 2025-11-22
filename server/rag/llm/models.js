@@ -1,0 +1,1 @@
+export const LLM_MODEL = "google/flan-t5-base";
