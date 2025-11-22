@@ -1,5 +1,7 @@
-// import { embedText } from "../llm/embedText.js"; //match function&filename and add when ready
+// import { embedText } from "../llm/localEmbed.js"; //match function&filename and add when ready
+import { embedText } from "../stubs/localEmbed.stub.js";
 // import { searchDocs } from "../db/searchDocs.js"; //match function&filename and add when ready
+import { searchDocs } from "../stubs/searchDocs.stub.js";
 import { buildPrompt } from "./buildPrompt.js";
 // import { generateAnswer } from "../llm/generateAnswer.js"; //match function&filename and add when ready
 
