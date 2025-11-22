@@ -96,7 +96,8 @@ This function must produce embeddings that Developer B can store in Postgres/pgv
 - Create a small test harness that prints sample embeddings. (however you want to interpret this, we only have time for minimal testing)
 - Export embedding functions in a clean module.
 #### Functions you must create
-Create a `llm` directory inside `/server/rag` directory
+Create a `llm` directory inside `/server/rag` directory  
+
 Inside: `/server/rag/llm/`
 1. create file: `localEmbed.js`
 ```js
@@ -147,7 +148,8 @@ Goal: Implement Postgres schema, vector storage, and vector search.
 - Convert Float32Array embeddings from Developer A into Postgres vector format
 
 #### Functions you must create
-Create a `db` directory inside `/server/rag` directory
+Create a `db` directory inside `/server/rag` directory  
+
 Inside: `/server/rag/db/`
 1. create this file: `schema.sql`
 ```js
@@ -215,7 +217,8 @@ const docs = [{content: "doc 1"}, {content: "doc 2"}];
 #### Responsibilities:
 
 #### Functions you must create
-Create a `pipeline` directory inside `/server/rag` directory
+Create a `pipeline` directory inside `/server/rag` directory  
+
 Inside: `/server/rag/pipeline/` 
 1. create this file: `buildPrompt.js`
 ```js
