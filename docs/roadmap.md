@@ -19,6 +19,12 @@
 - Fetch POST -> `/chat` 
 - Possibly SSE or WebSocket streaming (I need to look into this but might be out of scope) 
 
+## Using ES modules everywhere
+```js
+import { something } from "./something.js";
+export function something() {}
+```
+
 ## RAG Pipeline Dependency Graph
 ```scss
    ┌────────────┐
@@ -67,78 +73,6 @@ async function rag(question) {
   return { answer, retrievedDocs: docs };
 }
 ```
-
-## 🔐 Security Guidelines
-
-- API key never exposed to frontend
-- Express rate limits on `/chat`
-- Input validation using `zod`(or some other input validation, we are not doing TS so not sure about zod here)
-- Sanitization before DB insertion
-- Astro only calls your Express proxy (never HF directly)
-
-## Non-Parallel Work
-
-THE NON-PARALLEL 20% (Pipeline Integration)  
-
-Step 1 — Decide the unified embeddings model  
-All functions downstream need to know the vector dimension.
-Retrieval layer, DB schema, and prompt builder must reference the same model.
-Dependency: Embedding function must exist first.
-
-Step 2 — Insert actual embeddings into the database  
-DB must store real vectors before retrieval is meaningful.
-Retrieval developer needs exact shape and data type.  
-Dependency: Embeddings + schema must be finalized.
-
-Step 3 — Test vector search using real embeddings   
-Must confirm:  
-- correct vector similarity operator (<->)
-- dimension matches
-- performance is sane  
-Dependency: Data ingestion + embeddings.
-
-Step 4 — Build the final RAG pipeline function (rag())  
-This is the REAL assembly point:
-```js
-async function rag(question) {
-  const qEmbedding = await embedText(question);       // 1
-  const docs = await searchDocs(qEmbedding, 5);        // 2
-  const prompt = buildPrompt(question, docs);          // 3
-  const answer = await generateAnswer(prompt);         // 4
-  return { answer, docs };
-}
-```
-Must be done after all component functions exist.
-
-Step 5 — Write the Express /chat handler  
-This is the only point where:
-- request validation
-- rate limiting
-- security
-- pipeline invocation
-come together.  
-Dependency: RAG function must exist.
-
-Step 6 — Integration testing  
-Testing the pipeline end-to-end with:
-- sample docs
-- sample queries
-- failure cases
-- rate limits
-- long docs
-- empty result sets  
-Dependency: Entire pipeline assembled.
-
-
-### 📌 Summary of What Must Be Sequential
-| Step | Description                    | Depends on |
-| ---- | ------------------------------ | ---------- |
-| 1    | Confirm embedding model choice | none       |
-| 2    | Insert real doc embeddings     | 1          |
-| 3    | Real retrieval tests           | 2          |
-| 4    | Assemble RAG pipeline          | 1,2,3      |
-| 5    | Implement `/chat` route        | 4          |
-| 6    | Full RAG testing               | 5          |
 
 ## Developer Roles
 
@@ -409,8 +343,76 @@ buildPrompt(question, docs) → string
 generateAnswer(prompt) → answer  
 rag(question) → {answer, docs}  
 
-## Using ES modules everywhere
+---
+
+## 🔐 Security Guidelines
+
+- API key never exposed to frontend
+- Express rate limits on `/chat`
+- Input validation using `zod`(or some other input validation, we are not doing TS so not sure about zod here)
+- Sanitization before DB insertion
+- Astro only calls your Express proxy (never HF directly)
+
+## Non-Parallel Work
+
+THE NON-PARALLEL 20% (Pipeline Integration)  
+
+Step 1 — Decide the unified embeddings model  
+All functions downstream need to know the vector dimension.
+Retrieval layer, DB schema, and prompt builder must reference the same model.
+Dependency: Embedding function must exist first.
+
+Step 2 — Insert actual embeddings into the database  
+DB must store real vectors before retrieval is meaningful.
+Retrieval developer needs exact shape and data type.  
+Dependency: Embeddings + schema must be finalized.
+
+Step 3 — Test vector search using real embeddings   
+Must confirm:  
+- correct vector similarity operator (<->)
+- dimension matches
+- performance is sane  
+Dependency: Data ingestion + embeddings.
+
+Step 4 — Build the final RAG pipeline function (rag())  
+This is the REAL assembly point:
 ```js
-import { something } from "./something.js";
-export function something() {}
+async function rag(question) {
+  const qEmbedding = await embedText(question);       // 1
+  const docs = await searchDocs(qEmbedding, 5);        // 2
+  const prompt = buildPrompt(question, docs);          // 3
+  const answer = await generateAnswer(prompt);         // 4
+  return { answer, docs };
+}
 ```
+Must be done after all component functions exist.
+
+Step 5 — Write the Express /chat handler  
+This is the only point where:
+- request validation
+- rate limiting
+- security
+- pipeline invocation
+come together.  
+Dependency: RAG function must exist.
+
+Step 6 — Integration testing  
+Testing the pipeline end-to-end with:
+- sample docs
+- sample queries
+- failure cases
+- rate limits
+- long docs
+- empty result sets  
+Dependency: Entire pipeline assembled.
+
+
+### 📌 Summary of What Must Be Sequential
+| Step | Description                    | Depends on |
+| ---- | ------------------------------ | ---------- |
+| 1    | Confirm embedding model choice | none       |
+| 2    | Insert real doc embeddings     | 1          |
+| 3    | Real retrieval tests           | 2          |
+| 4    | Assemble RAG pipeline          | 1,2,3      |
+| 5    | Implement `/chat` route        | 4          |
+| 6    | Full RAG testing               | 5          |
