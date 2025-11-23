@@ -1,5 +1,5 @@
 import express from "express";
-import { rag } from "../rag/pipeline/orchestrator";
+import { rag } from "../rag/pipeline/orchestrator.js";
 
 const router = express.Router();
 
