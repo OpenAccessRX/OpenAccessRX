@@ -1,23 +1,26 @@
+// generateAnswer.js
+import { HF_CHAT_MODEL } from "../llm/models.js";
 import { InferenceClient } from "@huggingface/inference";
-import { LLM_MODEL } from "./models";
 
+// // Initialize the HuggingFace InferenceClient with your API
+//  key
 const client = new InferenceClient(process.env.HF_ACCESS_TOKEN);
 
 export async function generateAnswer(prompt) {
-    try {
-        const response = await client.textGeneration({
-            model: HF_ACCESS_TOKEN,
-            inputs: prompt,
-            parameters: {
-                max_new_tokens: 256,
-                temperature: 0.3,
-                do_sample: false
+  try {
+    const result = await client.chatCompletion({
+      model: HF_CHAT_MODEL,
+        messages: [
+            {
+                role: "user",
+                content: prompt,
             }
-        });
-        // HF returns: { generated_text: "..." }
-        return response.generated_text;
-    } catch(err) {
-        console.error("Error generating answer: ", err);
-        throw new Error("LLM generation failed");
-    }
-} 
+        ]
+    });
+
+    return result.choices[0].message || "No response from model";
+  } catch (err) {
+    console.error("Error generating answer:", err);
+    throw new Error("LLM generation failed");
+  }
+}

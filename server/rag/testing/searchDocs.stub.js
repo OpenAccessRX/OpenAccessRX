@@ -7,11 +7,11 @@ export async function searchDocs(embedding, k = 5) {
   return [
     {
       id: 1,
-      content: "This is a fake document chunk used for testing the RAG pipeline."
+      content: "This common cold can happen to anyone."
     },
     {
       id: 2,
-      content: "Another placeholder chunk to simulate retrieval results."
+      content: "Sometimes you have a cough, a runny nose, a headache."
     }
   ].slice(0, k);
 }
