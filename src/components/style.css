@@ -4,51 +4,16 @@
     box-sizing: border-box;
 }
 :root {
-    --darkest: #234d20;
-    --dark: #36802d;
-    --medium: #77ab59;
-    --light: #c9df8a;
-    --lightest: #f0f7da;
-    --browndark: #3c2f2f;
-    --brownmedium: #be9b7b;
-    --brownlight: #fff4e6; 
-    
+    --darkblue: #4f6a72;
+    --lightblue: #729aa7;
+    --offwhite: #e9e2d6;
+    --orange: #e6a175;
+    --marigold: #f2c974;
 }
 /* Flex Settings */
 
-.frog, #return {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* background-color: white; */
-}
-
 header {
     display: flex;
-    width: 100%;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style-type: none;
-    align-items: center;
-}
-
-nav li {
-    display: flex;
-    align-items: center;
-}
-
-#welcome {
-    display: flex;
-    flex-direction: column;
-}
-
-aside {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -61,294 +26,40 @@ footer ul{
 
 /* Grid Settings */
 
-.homeSheet main {
-    display: grid;
-    grid-template-columns: 12vw 35vw 20vw 1fr 12vw;
-    grid-auto-flow: column;
-}
-
-#welcome {
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
-
-
-aside {
-    grid-column-start: 4;
-    grid-column-end: 5;
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Styles*/
 
-nav {
-    background-color: var(--brownmedium);
-    border-bottom: 5px solid var(--browndark);
-}
-
-nav a {
-    color: var(--browndark);
-    font-size: 1.5em;
-}
-
-nav img {
-    max-width: 60px;
-    border: none;
-    margin-left: 5px;
-}
-
 
 
 body {
-    background-color: var(--dark);
-    background-image: url(../images/lily-pad3.png);
-    background-repeat: space space;
+    background-color: var(--offwhite);
 }
 
-#title_frog_left {
-    background-color: var(--brownmedium);
-    border-top: 10px solid var(--browndark);
-    border-bottom: 10px solid var(--browndark);
-    background-image: url(../images/frog_outline.png);
-    background-size: contain;
-    background-position: right;
-    flex: 1 1 auto;
-}
-
-#title {
-    background-color: var(--brownmedium);
-    border-top: 10px solid var(--browndark);
-    border-bottom: 10px solid var(--browndark);
+header {
+    background-color: var(--darkblue);
     padding: .25em;
-    color: var(--darkest);
+    color: var(--marigold);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 4em;
     text-align: center;
 }
 
-#title_frog_right {
-    background-color: var(--brownmedium);
-    border-top: 10px solid var(--browndark);
-    border-bottom: 10px solid var(--browndark);
-    background-image: url(../images/frog_flip.png);
-    background-size: contain;
-    background-position: left;
-    flex: 1 1 auto;
-}
-
-#homeTitle {
-    color: var(--browndark);
-    background-color: var(--light);
-    border: 5px solid var(--browndark);
-    border-radius: 1em;
-    padding: 1em;
-    font-size: 2.2em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 1em 0;
-    height: fit-content;
-    text-align: center;
-}
-
-
-#homeInfo {
-    color: var(--browndark);
-    background-color: var(--light);
-    border: 5px solid var(--browndark);
-    border-radius: 1em;
-    padding: 1em;
-    font-size: 1.9em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 1em 0;
-}
-
-#homeInfo p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-#homeInfo img {
-    max-width: 300px;
-    float: left;
-}
-
-#selfPicture {
-    max-width: 400px;
-    border: 5px solid var(--browndark);
-    border-radius: 1em;
-    margin-right: 1em;
-    float: left;
-}
-
-#magicCard {
-    max-width: 250px;
-    border: 5px solid var(--browndark);
-    border-radius: 1em;
-    margin-left: 1em;
-    float: right;
-}
-
-
-aside {
-    color: var(--browndark);
-    background-color: var(--brownmedium);
-    border: 5px solid var(--browndark);
-    border-radius: 1em;
-    font-size: 1.9em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 1em 0;
-    padding: 1em;
-    height: fit-content;
-    text-align: center;
-    
-}
-
-aside img {
-    max-width: 500px;
-    border: 10px solid var(--light);
-    border-radius: 3em;
-    margin: 1em 0;
-}
-
-.dayFrogTitle {
-    color: var(--browndark);
-    background-color: var(--light);
-    border: 5px solid var(--browndark);
-    border-radius: 1em;
-    padding: 1em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.frogSheet figure {
-    max-width: 600px;
-    margin: 1em;
-}
-
-.frogSheet figure img {
-    width: 100%;
-    max-width: none;
-    border: 10px solid var(--light);
-    border-radius: 5em;
-    margin: 0;
-}
-
-
-.frog, #return {
-    
-    margin-top: 10em;
-    margin-bottom: 3em;
-    margin-left: 10vw;
-    margin-right: 10vw;    
-}
-
-
-.frog_nameplate {
-    color: var(--browndark);
-    background-color: var(--light);
-    border: 5px solid var(--browndark);
-    border-radius: 1em;
-    padding: 1em;
-    font-size: 3em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 1em;
-}
-
-.frog_description {
-    color: var(--browndark);
-    background-color: var(--brownlight);
-    border: 5px solid var(--browndark);
-    border-radius: 2em;
-    padding: 1em;
-    font-size: 2em;
-}
-
-.aboutSheet main {
-    color: var(--browndark);
-    background-color: var(--light);
-    border: 5px solid var(--browndark);
-    border-radius: 1em;
-    padding: 1em;
-    font-size: 1.9em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 5em 10vw;
-}
-
-.inspirationSheet main {
-    color: var(--browndark);
-    background-color: var(--light);
-    border: 5px solid var(--browndark);
-    border-radius: 1em;
-    padding: 1em;
-    font-size: 2.3em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 5em 10vw;
-}
-
-.inspirationSheet p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.inspirationSheet main a {
-    color: var(--browndark)
-}
-
-.inspirationSheet main figure{
-    float: left;
-}
-
-#headphones {
-    max-width: 200px;
-    float: right;
-    margin-left: 1em;
-    border: none;
-}
-
-figure img {
-    max-width: 300px;
-    border-radius: 1em;
-    margin-right: 1em;
-}
-
-
-figcaption {
-    color: var(--darkest);
-    font-size: .4em;
-    text-align: center;
-}
-
-.aboutSheet main p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-#return p {
-    color: var(--browndark);
-    background-color: var(--light);
-    border: 3px solid var(--browndark);
-    border-radius: 1em;
-    padding: 1em;
-    font-size: 1em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 1em;
-}
-
-#return a {
-    color: var(--browndark);
-    text-decoration: none;
-}
 
 footer {
-    background-color: var(--brownmedium);
-    border-top: 5px solid var(--browndark);
-    color: var(--browndark);
+    background-color: var(--darkblue);
+    color: var(--marigold);
     font-size: 1.5em;
     clear: both;
-}
-
-footer img {
-    width: 60px;
-    border: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 footer a {
-    color: var(--browndark);
+    color: var(--marigold);
 }
