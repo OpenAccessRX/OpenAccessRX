@@ -9,12 +9,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@huggingface/transformers": "^3.8.0",
     "@huggingface/inference": "^4.13.3",
     "astro": "^5.15.9",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "pg": "^8.16.3",
+    "vitest": "^4.0.13"
     "pgvector": "^0.2.1"
     "node-fetch": "^3.3.2",
     "pg": "^8.16.3"
