@@ -5,8 +5,7 @@ import { searchDocs } from "../testing/searchDocs.stub.js";
 import { buildPrompt } from "./buildPrompt.js";
 import { generateAnswer } from "../llm/generateAnswer.js"; //match function&filename and add when ready
 
-//temp variables:
-// const generateAnswer = async function(prompt){};
+//placeholder prompt content 
 const prompt = buildPrompt("What are common cold symptoms?", [
   { id: 1, content: "The common cold often includes coughing, sneezing, and congestion." },
   { id: 2, content: "Colds are typically mild and resolve within a week." }
@@ -14,7 +13,7 @@ const prompt = buildPrompt("What are common cold symptoms?", [
 
 console.log("prompt: ", prompt);
 
-export async function runRAGPipeline(question) {
+export async function rag(question) {
     const qEmbedding = await embedText(question);
     const docs = await searchDocs(qEmbedding, 5);
     const prompt = buildPrompt(question, docs);

@@ -1,9 +1,7 @@
-// generateAnswer.js
 import { HF_CHAT_MODEL } from "../llm/models.js";
 import { InferenceClient } from "@huggingface/inference";
 
-// // Initialize the HuggingFace InferenceClient with your API
-//  key
+// Initialize the HuggingFace InferenceClient with your API
 const client = new InferenceClient(process.env.HF_ACCESS_TOKEN);
 
 export async function generateAnswer(prompt) {

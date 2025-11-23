@@ -1,5 +1,5 @@
 import express from "express";
-import { runRAGPipeline } from "../rag/pipeline/orchestrator";
+import { rag } from "../rag/pipeline/orchestrator";
 
 const router = express.Router();
 
@@ -9,7 +9,7 @@ router.post("/rag", async (req, res) => {
         if(!query) {
             return res.status(400).json({ error: "Missing query"}); //redo error handling
         }
-        const result = await runRAGPipeline(query);
+        const result = await rag(query);
         res.json(result);
     } catch(err) {
         console.error("RAG error: ", err);
