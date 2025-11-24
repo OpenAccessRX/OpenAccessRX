@@ -7,7 +7,7 @@ import db from "./client.js";
  * @returns {Promise<object>} - The inserted row from the database.
  */
 
-export async function insertDoc([content, embedding]) {
+export async function insertDoc(content, embedding) {
     const vectorLiteral = `[${Array.from(embedding).join(",")}]`;
     const result = await db.query(
     `
