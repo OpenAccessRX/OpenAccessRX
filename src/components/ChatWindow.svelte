@@ -30,16 +30,18 @@
                 //not sure about messages line
                 return;
             }
+
             const data = await res.json();
+
+            messages = [...messages, { role: "assistant", content: data.reply }];
+
         } catch(err){
             //add better error handling logic
+            console.error("Chat send error: ", err)
         } finally {
             isLoading = false;
         }
         
-        // messages.push({ sender: "bot", text: data.reply })
-
-        // input = "";
     }
 
     async function resetChat() {
@@ -81,8 +83,8 @@
             rows="3"
             class="chatbox-textarea"
         ></textarea>
+        <button class="chat-button" disabled={isLoading}>send</button>
     </form>
-
-    <button class="chat-button" disabled={isLoading}>send</button>
+    
     <button class="chat-button" on:click={resetChat}>reset</button>
 </section>
