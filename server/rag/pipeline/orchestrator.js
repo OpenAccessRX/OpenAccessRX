@@ -1,9 +1,9 @@
-// import { embedText } from "../llm/localEmbed.js"; //match function&filename and add when ready
-import { embedText } from "../testing/localEmbed.stub.js";
-// import { searchDocs } from "../db/searchDocs.js"; //match function&filename and add when ready
-import { searchDocs } from "../testing/searchDocs.stub.js";
+import { embedText } from "../llm/localEmbed.js"; 
+// import { embedText } from "../testing/localEmbed.stub.js";
+import { searchDocs } from "../db/searchDocs.js"; 
+// import { searchDocs } from "../testing/searchDocs.stub.js";
 import { buildPrompt } from "./buildPrompt.js";
-import { generateAnswer } from "../llm/generateAnswer.js"; //match function&filename and add when ready
+import { generateAnswer } from "../llm/generateAnswer.js"; 
 
 //placeholder prompt content 
 const prompt = buildPrompt("What are common cold symptoms?", [
