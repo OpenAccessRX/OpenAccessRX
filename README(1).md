@@ -17,13 +17,17 @@
 
 ## Setup-and-run instructions 
 ### For Setting up a Local Development Server 
-1. Open and split a terminal 
+1. Go to the .env file and check if the DATABASE_URL, HF_ACCESS_TOKEN, PG_USER, PG_PASSWORD, and PORT variables are filled with your local back-end information. 
 
-2. In terminal window 1: run the instruction "npm run dev".  
+2. In terminal, run npm install to install dependencies in package.json
 
-3. In terminal window 2: run the command "node server/server.js". 
+3. Open and split a terminal 
 
-### For Setting up PostgreSQL to work with our project (data migration test)
+4. In terminal window 1: run the instruction "npm run dev" to start the webpage (front end), visit this site to test: localhost:4321  
+
+5. In terminal window 2: run the command "node server/server.js" to start the server (back-end), visit this site to test: localhost:5000/api/test-db
+
+### For setting up PostgreSQL to work with our project (schema migration test)
 pgvector extension files must first be installed on the system where PostgreSQL is running: 
 
 1. Stop the PostgreSQL Service: Ensure the server is not running while you modify its files.
@@ -34,5 +38,4 @@ pgvector extension files must first be installed on the system where PostgreSQL 
 
 4. Restart the PostgreSQL Service: Restart the service after placing the files.
 
-After installing the pgvector extensions, run the data migration javascript file: (command in terminal: node .\server\rag\db\migrate.js) 
- 
+After installing the pgvector extensions, run the data migration javascript file (command in terminal: node .\server\rag\db\migrate.js). if there are no other complications, you should get a console log message that indicates the data migration test was successful.  
