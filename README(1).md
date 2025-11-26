@@ -1,11 +1,11 @@
-## Project Title: OpenAccessRX Prototype Development & Feasibility Demo 
+# Project Title: OpenAccessRX Prototype Development & Feasibility Demo 
 
-### Team Members: 
+## Team Members: 
 - El Brewster 
 - Evelyn Bushell 
 - Amde Wubshet 
 
-### Technologies Used: 
+## Technologies Used: 
 - PostgreSQL Version 18 (pgAdmin 4 client)
 - Node.js v22.21.0
 - Express.js v5 
@@ -14,15 +14,15 @@
 - Mistral-7B (LLM)
 - pgvector 
 
-### Chatbot and Key Security Feature 
+## Chatbot and Key Security Feature 
 
-### Setup and run instructions 
-#### For Setting up a Local Development Server: 
+## Setup and run instructions 
+### For Setting up a Local Development Server: 
 1. Open and split a terminal 
 2. In terminal window 1: run the instruction "npm run dev". This    
 3. In terminal window 2: run the command "node server/server.js". 
 
-#### For Setting up PostgreSQL to work with our project (data migration test)
+### For Setting up PostgreSQL to work with our project (data migration test)
 pgvector extension files must first be installed on the system where PostgreSQL is running: 
 1. Stop the PostgreSQL Service: Ensure the server is not running while you modify its files.
 
