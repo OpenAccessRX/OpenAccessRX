@@ -34,5 +34,5 @@ pgvector extension files must first be installed on the system where PostgreSQL 
 
 4. Restart the PostgreSQL Service: Restart the service after placing the files.
 
-After installing the pgvector extensions, run the data migration javascript file: (command in terminal: node .\server\rag\db\migrate.js) 
-- 
+- After installing the pgvector extensions, run the data migration javascript file: (command in terminal: node .\server\rag\db\migrate.js) 
+ 
