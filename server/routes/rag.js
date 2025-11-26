@@ -24,8 +24,4 @@ router.post("/rag", async (req, res) => {
     }
 })
 
-router.post("/reset", (req, res) => {
-    return res.json({ok: true});
-})
-
 export default router;
