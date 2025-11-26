@@ -1,16 +1,23 @@
-import express from "express";
+import { Router } from "express";
 import { rag } from "../rag/pipeline/orchestrator.js";
 
-const router = express.Router();
+const router = Router();
 
-router.post("/rag", async (req, res) => {
+router.post("/rag", async (req, res) => {    
+    const { message } = req.body;
+
     try {
-        const { query } = req.body;
-        if(!query) {
+
+        if(!message) {
             return res.status(400).json({ error: "Missing query"}); //redo error handling
         }
-        const result = await rag(query);
-        res.json(result);
+
+        const reply = await rag(message);
+
+        return res.json({
+            reply
+        });
+
     } catch(err) {
         console.error("RAG error: ", err);
         res.status(500).json({error: "Internal RAG pipeline failure"}); //doublecheck that errors fall through to express handler
