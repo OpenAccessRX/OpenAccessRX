@@ -19,7 +19,9 @@
 ## Setup and run instructions 
 ### For Setting up a Local Development Server: 
 1. Open and split a terminal 
-2. In terminal window 1: run the instruction "npm run dev". This    
+
+2. In terminal window 1: run the instruction "npm run dev".  
+
 3. In terminal window 2: run the command "node server/server.js". 
 
 ### For Setting up PostgreSQL to work with our project (data migration test)
