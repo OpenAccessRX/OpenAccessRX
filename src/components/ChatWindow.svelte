@@ -79,9 +79,10 @@
             bind:value={userInput}
             placeholder="Hello {username}! Ask me for help..."
             rows="3"
+            class="chatbox-textarea"
         ></textarea>
     </form>
 
-    <button class="chat-button" disabled={isLoading}>Send</button>
-    <button class="chat-button" on:click={resetChat}>Reset</button>
+    <button class="chat-button" disabled={isLoading}>send</button>
+    <button class="chat-button" on:click={resetChat}>reset</button>
 </section>
