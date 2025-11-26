@@ -2,9 +2,11 @@ import { Router } from "express";
 const router = Router();
 
 router.post("/", (req, res) => { //test POST req/res cycle without server logic
-    if(!req.session.user) {
-        return res.status(401).json({ error: "Not logged in "});
-    }
+    //TEMPORARY BYPASS FOR FRONT-END TESTING
+    // if(!req.session.user) {
+    //     return res.status(401).json({ error: "Not logged in "});
+    // }
+    
     res.json({reply: `Echo: ${req.body.message}`});
 
 })
