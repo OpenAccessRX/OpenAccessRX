@@ -17,16 +17,12 @@
 export function buildPrompt(userMessage, docs) {
     // use a fixed system instruction
     const systemInstruction = `
-You are a helpful, safety-conscious medical assistant.
-Use ONLY the information provided in the retrieved context to answer the user's question.
-If the answer is not in the context, say: "I don't know based on the provided information."
-Do not hallucinate or invent facts.
-Keep your answer clear and concise.
-  `.trim();
-    // iterate over docs and clean them
-        //trim whitespace
-        //avoid empty docs
-        //normalize line breaks
+      You are a helpful, safety-conscious medical assistant.
+      Use ONLY the information provided in the retrieved context to answer the user's question.
+      If the answer is not in the context, say: "I don't know based on the provided information."
+      Do not hallucinate or invent facts.
+      Keep your answer clear and concise.`.trim();
+
     const formattedDocs = docs
     .map((doc, i) => {
       const cleaned = (doc.content || "").trim();

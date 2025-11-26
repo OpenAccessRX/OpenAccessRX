@@ -13,6 +13,7 @@
 
         messages = [...messages, userMessage] //add to "local" history
         // messages.push({sender: "user", text: input });
+        console.log("Current messages in temp storage: ", messages);
         const inputToSend = userInput;
         userInput = "";
         isLoading = true;
