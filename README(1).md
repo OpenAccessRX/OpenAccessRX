@@ -23,9 +23,9 @@
 
 3. Open and split a terminal 
 
-4. In terminal window 1: run the instruction "npm run dev" to start the webpage (front end), visit this site to test: localhost:4321  
+4. In terminal window 1: run the instruction "npm run dev" to start the webpage (front end), visit this site on a web browser to test: localhost:4321  
 
-5. In terminal window 2: run the command "node server/server.js" to start the server (back-end), visit this site to test: localhost:5000/api/test-db
+5. In terminal window 2: run the command "node server/server.js" to start the server (back-end), visit this site on a web browser to test: localhost:5000/api/test-db
 
 ### For setting up PostgreSQL to work with our project (schema migration test)
 pgvector extension files must first be installed on the system where PostgreSQL is running: 
