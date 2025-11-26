@@ -4,10 +4,13 @@ import { embedText, loadEmbeddingModel } from '../llm/localEmbed.js'; // Develop
 import { insertDoc } from './insertDoc.js'; // Developer B's function
 import db from './client.js'; // The pg client wrapper
 import fs from "fs"; // works with files
+import path from "path";
+import { fileURLToPath } from "url";
 
 // Load your KB from a text file
-const path = require('path');
-const filePath = path.join(__dirname, '../../docs/Pharmacy_Policy.txt');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const filePath = path.join(__dirname, "../../../docs/Pharmacy_Policy.txt");
 const kbText = fs.readFileSync(filePath, "utf-8");
 
 // Simple fixed-size chunking
