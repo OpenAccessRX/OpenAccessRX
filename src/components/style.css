@@ -102,3 +102,8 @@ footer a {
     background-color: var(--marigold);
     color: var(--darkblue)
 }
+
+.message-display {
+    background-color: var(--offwhite);
+    border: 2px solid var(--darkblue);
+}
