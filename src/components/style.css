@@ -69,14 +69,16 @@ footer a {
 }
 
 .chatterbox {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: .3rem;
-    justify-items: center;
     margin: 1rem;
     background-color: var(--marigold);
     border: 2px solid var(--darkblue);
     border-radius: .15rem;
     padding: 1rem;
+    width: 75%;
+    max-width: 650px;
 }
 
 .chatbox-textarea {
@@ -84,7 +86,6 @@ footer a {
     border-radius: .15rem;
     padding: .5rem;
     resize: none;
-    width: 30ch;
 }
 
 .chat-button {
@@ -94,6 +95,7 @@ footer a {
     color: var(--darkblue);
     font-weight: 600;
     min-width: 0;
+    max-width: 15ch;
 }
 
 .chat-button:hover {
@@ -110,5 +112,22 @@ footer a {
 .chat-form {
     display: grid;
     gap: .3rem;
-    justify-items: center;
+}
+
+.message-display {
+    flex: 1;
+    max-height: 350px;
+    min-height: 0px;
+    overflow-y: auto;
+    padding: .5rem;
+    border: 1px solid var(--offwhite);
+    border-radius: .15rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    margin: .3rem;
+}
+
+.msg-user {
+    color:  var(--darkblue)
 }
