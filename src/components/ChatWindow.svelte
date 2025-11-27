@@ -77,7 +77,7 @@
         {/if}
     </div>
 
-    <form on:submit|preventDefault={sendMessage}>
+    <form class="chat-form" on:submit|preventDefault={sendMessage}>
         <textarea 
             bind:value={userInput}
             placeholder="Hello {username}! Ask me for help..."

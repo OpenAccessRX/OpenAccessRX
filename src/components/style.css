@@ -69,6 +69,9 @@ footer a {
 }
 
 .chatterbox {
+    display: grid;
+    gap: .3rem;
+    justify-items: center;
     margin: 1rem;
     background-color: var(--marigold);
     border: 2px solid var(--darkblue);
@@ -90,6 +93,7 @@ footer a {
     padding: .5rem;
     color: var(--darkblue);
     font-weight: 600;
+    min-width: 0;
 }
 
 .chat-button:hover {
@@ -103,7 +107,8 @@ footer a {
     color: var(--darkblue)
 }
 
-.message-display {
-    background-color: var(--offwhite);
-    border: 2px solid var(--darkblue);
+.chat-form {
+    display: grid;
+    gap: .3rem;
+    justify-items: center;
 }
