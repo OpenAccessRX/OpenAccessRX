@@ -21,15 +21,18 @@ export function buildPrompt(userMessage, docs) {
       Use ONLY the information provided in the retrieved context to answer the user's question.
       If the answer is not in the context, say: "I don't know based on the provided information."
       Do not hallucinate or invent facts.
-      Keep your answer clear and concise.`.trim();
+      Keep your answer clear and concise. Please don't mention "Documents", just reference the context of the documents.`.trim();
 
+    // const formattedDocs = docs
+    // .map((doc, i) => {
+    //   const cleaned = (doc.content || "").trim();
+    //   return `[Document ${i + 1}] ${cleaned}`;
+    // })
+    // .join("\n\n");
     const formattedDocs = docs
-    .map((doc, i) => {
-      const cleaned = (doc.content || "").trim();
-      return `[Document ${i + 1}] ${cleaned}`;
-    })
+    .map(doc => (doc.content || "").trim())
     .join("\n\n");
-    
+
     const finalPrompt = `
         ${systemInstruction}
         --- Retrieved Context ---
