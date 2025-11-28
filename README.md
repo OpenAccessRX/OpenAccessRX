@@ -21,7 +21,6 @@
 
 ## Setup-and-run instructions 
 ### For Setting up a Local Development Server 
-1. 
 1. Go to the .env file and check if the DATABASE_URL, HF_ACCESS_TOKEN, PG_USER, PG_PASSWORD, and PORT variables are filled with your local server information. 
 
 2. In terminal, run "npm install" to install dependencies in package.json
