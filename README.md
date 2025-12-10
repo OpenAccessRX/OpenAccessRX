@@ -1,6 +1,4 @@
-AI Chatbot Demo 
-====================================================
-"OpenAccessRX" Prototype Development & Feasibility  
+AI Chatbot: "OpenAccessRX" Prototype Development & Feasibility  
 
 ## Team Members: 
 - El Brewster 
