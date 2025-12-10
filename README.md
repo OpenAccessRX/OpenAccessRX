@@ -5,6 +5,35 @@
 - Evelyn Bushell 
 - Amde Wubshet 
 
+--- 
+
+## Technologies Used: 
+- PostgreSQL Version 18 (pgAdmin 4 client)
+- Node.js v22.21.0
+- Express.js v5 
+- Astro.js v5 
+- all-MiniLM-L6-v2 (embedding model)
+- Mistral-7B (LLM)
+- pgvector 
+
+---
+
+## Setup-and-run instructions 
+
+### For Setting up a Local Development Server 
+1. Go to the .env file and check if the DATABASE_URL, HF_ACCESS_TOKEN, PG_USER, PG_PASSWORD, and PORT variables are filled with your local back-end information. 
+
+2. In terminal, run npm install to install dependencies in package.json
+
+3. Open and split a terminal 
+
+4. In terminal window 1: run the instruction "npm run dev" to start the webpage (front end), visit this site on a web browser to test: localhost:4321  
+
+5. In terminal window 2: run the command "node server/server.js" to start the server (back-end), visit this site on a web browser to test: localhost:5000/api/test-db
+
+### For setting up PostgreSQL to work with our project (schema migration test)
+pgvector extension files must first be installed on the system where PostgreSQL is running: 
+
 ## Technologies Used: 
 - PostgreSQL Version 18 (pgAdmin 4 client)
 - Node.js v22.21.0
@@ -42,6 +71,7 @@ pgvector extension files must first be installed on the system where PostgreSQL 
 
 4. Restart the PostgreSQL Service: Restart the service after placing the files.
 
+After installing the pgvector extensions, run the data migration javascript file (command in terminal: node .\server\rag\db\migrate.js). if there are no other complications, you should get a console log message that indicates the data migration test was successful.  
 After installing the pgvector extensions, run the data migration javascript file (command in terminal: node .\server\rag\db\migrate.js). if there are no other complications, you should get a console log message that indicates the data migration test was successful.  
 
 ### For setting up the knowledge base 

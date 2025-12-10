@@ -1,4 +1,5 @@
 ---
+// calling this route should test database connection to the front-end without involving the RAG pipeline
 const res = await fetch("/api/test-db");
 const data = await res.json();
 ---
