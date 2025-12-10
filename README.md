@@ -22,9 +22,34 @@
 
 ---
 
-## Setup-and-run instructions 
+## Setup & Installation
 
-### For Setting up a Local Development Server 
+### Software Checks
+
+1. Ensure Node.js environment is ready for coding. Open a Terminal and run these commands to check that Node, nvm, and npm are installed:
+```
+node -v
+nvm -v
+npm -v
+```
+2. If you still need installs for the environment:
+  - To install **Node.js** on a **Windows** machine, install `nvm` (from here)[https://github.com/coreybutler/nvm-windows/releases] and use Corey's (helpful README)[https://github.com/coreybutler/nvm-windows?tab=readme-ov-file]
+  - To install `nvm` for **Mac** go [here](https://github.com/nvm-sh/nvm)
+  - Once `nvm` is installed, use the it to install node.
+  - Go (here)[https://nodejs.org/en/download] for alternative ways to install **Node.js**.
+  - (To install)[https://docs.npmjs.com/downloading-and-installing-node-js-and-npm] `npm` run `npm install -g npm`
+
+### Project Setup & Front-end Startup
+1. Click "Fork" on GitHub or clone directly: `git clone git@github.com:OpenAccessRX/OpenAccessRX.git`
+2. Then open the project folder in your terminal: `cd openaccessrx`
+3. In terminal, run `npm install` to install dependencies in `package.json`
+4. Then run `npm run dev` to run the Astro app in your browser.
+5. Navigate to [localhost:4321/chat](http://localhost:4321/chat) to chat with the pharmacy bot.
+6. +To start the back-end, open a second terminal window, run `node server\server.js` (windows) or `node server/server.js` (mac) to start the server. 
+    
+### Back-end Startup
+
+### Local Development Server Startup
 1. Go to the .env file and check if the DATABASE_URL, HF_ACCESS_TOKEN, PG_USER, PG_PASSWORD, and PORT variables are filled with your local back-end information. 
 
 2. In terminal, run npm install to install dependencies in package.json
