@@ -1,3 +1,5 @@
+// keep for test route, but not essential for RAG pipeline
+
 import pkg from "pg";
 import dotenv from "dotenv";
 dotenv.config();
