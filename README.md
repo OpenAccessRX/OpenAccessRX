@@ -18,6 +18,10 @@
 
 ---
 
+<img width="1773" height="1502" alt="Screenshot 2025-12-10 140634" src="https://github.com/user-attachments/assets/69a369ff-9cb8-45ad-837d-73fc47307df7" />
+
+---
+
 ## Setup-and-run instructions 
 
 ### For Setting up a Local Development Server 
