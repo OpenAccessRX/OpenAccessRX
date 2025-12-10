@@ -1,4 +1,4 @@
-# Project Title: OpenAccessRX Prototype Development & Feasibility Demo 
+# AI Chatbot Demo: OpenAccessRX Prototype Development & Feasibility  
 
 ## Team Members: 
 - El Brewster 
