@@ -42,7 +42,7 @@
 ### 2. Setup & Installation: Project Setup & Front-end Startup
 
 1. Click "Fork" on GitHub or clone directly: `git clone git@github.com:OpenAccessRX/OpenAccessRX.git`
-2. Then open the project folder in your terminal: `cd openaccessrx`
+2. Then open the project folder in your terminal: `cd OpenAccessRX`
 3. In terminal, run `npm install` to install dependencies in `package.json`
 4. Then run `npm run dev` to run the Astro app in your browser.
 5. Navigate to [localhost:4321/chat](http://localhost:4321/) to see that the site is running.
