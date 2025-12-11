@@ -39,7 +39,7 @@
   - Go [here](https://nodejs.org/en/download) for alternative ways to install **Node.js**.
   - To [install](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) `npm` run `npm install -g npm`
 
-### 2. Setup & Installation: Project Setup & Front-end Startup
+### 2. Setup Project & Startup Front-end 
 
 1. Click "Fork" on GitHub or clone directly: `git clone git@github.com:OpenAccessRX/OpenAccessRX.git`
 2. Then open the project folder in your terminal: `cd OpenAccessRX`
@@ -47,13 +47,13 @@
 4. Then run `npm run dev` to run the Astro app in your browser.
 5. Navigate to [localhost:4321/chat](http://localhost:4321/) to see that the site is running.
    
-### 3. Setup & Installation: Local Environment Variables Setup
+### 3. Setup Local Environment Variables 
 
 6. In the root of the project, create a new file `.env`
 7. Copy contents of template `.env.example` into the `.env` file
 8. Ensure DATABASE_URL, HF_ACCESS_TOKEN, PG_USER, PG_PASSWORD, and PORT variables are filled with your local back-end information.
 
-### 4. Setup & Installation: Local Database Setup
+### 4. Setup Local Database 
 
 #### Setting up PostgreSQL: Schema Migration Test
 9. Stop PostgreSQL. Since `pgvector` extension files must first be installed on the system where PostgreSQL is running, stop PostgreSQL service on your machine. Ensure the server is not running while you modify its files.
@@ -65,11 +65,12 @@
 #### Setting up the Knowledge Base 
 14. After successfully running the database migration script, you should see the "documents" table in the pgAdmin client. Run `node .\server\rag\db\seed.js` in terminal to feed our pharmacy policy to that same table. This enables the LLM to respond with information related to our pharmacy. 
 
-### 5. Setup & Installation: Local Development Server Startup
+### 5. Startup Local Development Server Startup
 15. To start the back-end, open a second terminal window, and run `node server\server.js` to start the server.
 16. Navigate to [http://localhost:5000/api/test-db](http://localhost:5000/api/test-db) in the browser to test PostgreSQL database connection to Express server
 
 ⭐ You should now have an Astro.js front-end available in the browser, an Express.js server at localhost:5000/api, and a PostgreSQL server active containing our pharmacy policy. ⭐
+
 ⭐ Finally, navigate to [localhost:4321/chat](http://localhost:4321/chat) to chat with the pharmacy bot (and to run RAG orchestration behind the scenes). ⭐ 
 
 
