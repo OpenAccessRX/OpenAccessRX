@@ -22,7 +22,7 @@
 
 ---
 
-## Setup & Installation
+## Run the Demo on Your Machine
 
 ### 1. Setup & Installation: Software Checks
 
