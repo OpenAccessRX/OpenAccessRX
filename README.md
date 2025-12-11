@@ -1,9 +1,9 @@
 # AI Chatbot: "OpenAccessRX" Prototype Development & Feasibility  
 
 ## Team Members: 
+- Amde Wubshet 
 - El Brewster 
 - Evelyn Bushell 
-- Amde Wubshet 
 
 --- 
 
