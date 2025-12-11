@@ -35,7 +35,7 @@
 2. If you still need installs for the environment:
   - To install **Node.js** on a **Windows** machine, install `nvm` [from here](https://github.com/coreybutler/nvm-windows/releases) and use Corey's [helpful README](https://github.com/coreybutler/nvm-windows?tab=readme-ov-file)
   - To install `nvm` for **Mac** go [here](https://github.com/nvm-sh/nvm)
-  - Once `nvm` is installed, use the it to install node.
+  - Once `nvm` is installed, use it to install node.
   - Go [here](https://nodejs.org/en/download) for alternative ways to install **Node.js**.
   - [To install](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) `npm` run `npm install -g npm`
 
