@@ -18,6 +18,13 @@
 
 ---
 
+## Description of chatbot key security feature 
+- For the prototype, our chatbot functions to answer questions related to the policy of our online pharmacy (as seen in docs/Pharmacy_Policy.txt). The user enters a query, and the chatbot responds if it can answer with its ground truth data. 
+
+- Everything for this chatbot is run locally in your system, so all of your user data should be safe against cyberattacks. We also have a login feature, but it isn't fully implemented yet (you can put whatever you want for the username and password).
+
+---
+
 <img width="1773" height="1502" alt="Screenshot 2025-12-10 142118" src="https://github.com/user-attachments/assets/b5767db0-af0c-4789-a8ce-fe07aee20767" />
 
 ---
@@ -73,10 +80,3 @@
 
 ⭐ Finally, navigate to [localhost:4321/chat](http://localhost:4321/chat) to chat with the pharmacy bot (and to run RAG orchestration behind the scenes). ⭐ 
 
-
----
-
-## Description of chatbot key security feature 
-- For the prototype, our chatbot functions to answer questions related to the policy of our online pharmacy (as seen in docs/Pharmacy_Policy.txt). The user enters a query, and the chatbot responds if it can answer with its ground truth data. 
-
-- Everything for this chatbot is run locally in your system, so all of your user data should be safe against cyberattacks. We also have a login feature, but it isn't fully implemented yet (you can put whatever you want for the username and password). 
