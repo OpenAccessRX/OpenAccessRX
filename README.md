@@ -58,8 +58,8 @@
 #### Setting up PostgreSQL: Schema Migration Test
 1. Stop PostgreSQL. Since `pgvector` extension files must first be installed on the system where PostgreSQL is running, stop PostgreSQL service on your machine. Ensure the server is not running while you modify its files.
 2. Download the Extension: You typically need to download the pre-compiled binaries for your specific PostgreSQL version (e.g., PostgreSQL 15, 16) and architecture. Search for "pgvector pre-compiled binaries for Windows," or [download what we used](https://github.com/andreiramani/pgvector_pgsql_windows/releases/tag/0.8.1_18.0.2)
-3. Add `pgvector` files: Copy the necessary files (the .dll and .control files) into the PostgreSQL installation's
-4. Restart the PostgreSQL Service: Restart the service after placing the files.
+3. Add `pgvector` files: Copy the necessary files (the .dll and .control files) into the PostgreSQL installation's (?)
+4. Restart the PostgreSQL service after placing the files.
 5. After installing the pgvector extensions, run the data migration command in terminal: `node .\server\rag\db\migrate.js`. You should get a console log message that indicates the data migration test was successful.  
 
 #### Setting up the Knowledge Base 
