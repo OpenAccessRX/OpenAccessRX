@@ -24,7 +24,7 @@
 
 ## Setup & Installation
 
-### Software Checks
+### 1. Setup & Installation: Software Checks
 
 1. Ensure Node.js environment is ready for coding. Open a Terminal and run these commands to check that Node, nvm, and npm are installed:
       ```
@@ -39,46 +39,38 @@
   - Go [here](https://nodejs.org/en/download) for alternative ways to install **Node.js**.
   - [To install](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) `npm` run `npm install -g npm`
 
-### Project Setup & Front-end Startup
+### 2. Setup & Installation: Project Setup & Front-end Startup
 
 1. Click "Fork" on GitHub or clone directly: `git clone git@github.com:OpenAccessRX/OpenAccessRX.git`
 2. Then open the project folder in your terminal: `cd openaccessrx`
 3. In terminal, run `npm install` to install dependencies in `package.json`
 4. Then run `npm run dev` to run the Astro app in your browser.
-5. Navigate to [localhost:4321/chat](http://localhost:4321/) to view the site.
+5. Navigate to [localhost:4321/chat](http://localhost:4321/) to see that the site is running.
    
-5. Navigate to [localhost:4321/chat](http://localhost:4321/chat) to chat with the pharmacy bot.
+### 3. Setup & Installation: Local Environment Variables Setup
 
-### Local Environment Variables Setup
+6. In the root of the project, create a new file `.env`
+7. Copy contents of template `.env.example` into the `.env` file
+8. Ensure DATABASE_URL, HF_ACCESS_TOKEN, PG_USER, PG_PASSWORD, and PORT variables are filled with your local back-end information.
 
-1. In the root of the project, create a new file `.env`
-2. Copy contents of template `.env.example` into the `.env` file
-3. Ensure DATABASE_URL, HF_ACCESS_TOKEN, PG_USER, PG_PASSWORD, and PORT variables are filled with your local back-end information.
+### 4. Setup & Installation: Local Database Setup
 
----
-   
-### Local Database Setup
-
-#### For setting up PostgreSQL to work with our project (schema migration test)
-pgvector extension files must first be installed on the system where PostgreSQL is running: 
-
-1. Stop the PostgreSQL Service: Ensure the server is not running while you modify its files.
-2. Download the Extension: You typically need to download the pre-compiled binaries for your specific PostgreSQL version (e.g., PostgreSQL 15, 16) and architecture. You'll need to search for "pgvector pre-compiled binaries for Windows." (version for our technology: https://github.com/andreiramani/pgvector_pgsql_windows/releases/tag/0.8.1_18.0.2)
-3. Place Files: You usually copy the necessary files (the .dll and .control files) into the PostgreSQL installation's
+#### Setting up PostgreSQL: Schema Migration Test
+1. Stop PostgreSQL. Since `pgvector` extension files must first be installed on the system where PostgreSQL is running, stop PostgreSQL service on your machine. Ensure the server is not running while you modify its files.
+2. Download the Extension: You typically need to download the pre-compiled binaries for your specific PostgreSQL version (e.g., PostgreSQL 15, 16) and architecture. Search for "pgvector pre-compiled binaries for Windows," or [download what we used](https://github.com/andreiramani/pgvector_pgsql_windows/releases/tag/0.8.1_18.0.2)
+3. Add `pgvector` files: Copy the necessary files (the .dll and .control files) into the PostgreSQL installation's
 4. Restart the PostgreSQL Service: Restart the service after placing the files.
+5. After installing the pgvector extensions, run the data migration command in terminal: `node .\server\rag\db\migrate.js`. You should get a console log message that indicates the data migration test was successful.  
 
-After installing the pgvector extensions, run the data migration javascript file (command in terminal: node .\server\rag\db\migrate.js). if there are no other complications, you should get a console log message that indicates the data migration test was successful.  
+#### Setting up the Knowledge Base 
+After successfully running the database migration script, you should see the "documents" table in the pgAdmin client. Run `node .\server\rag\db\seed.js` in terminal to feed our pharmacy policy to that same table. This enables our LLM to respond with information related to our pharmacy. 
 
-### For setting up the knowledge base 
-After running the database migration script, you should see the "documents" table in the pgAdmin client. The last thing we have to do is feed the pharmacy policy (our relevant information) to that same table so our LLM can respond with information related to our pharmacy (command in terminal node .\server\rag\db\seed.js)
-
----
-
-### Local Development Server Startup
+### 5. Setup & Installation: Local Development Server Startup
 6. To start the back-end, open a second terminal window, run `node server\server.js` to start the server.
-7. Navigate to [http://localhost:5000/api/test-db](http://localhost:5000/api/test-db) in the browser to test database connection to Express server
+7. Navigate to [http://localhost:5000/api/test-db](http://localhost:5000/api/test-db) in the browser to test PostgreSQL database connection to Express server
 
-
+You should now have Astro.js front-end available in the browser, an Express.js server at localhost:5000/api, and a PostgreSQL server active containing our pharmacy policy.
+Finally, navigate to [localhost:4321/chat](http://localhost:4321/chat) to chat with the pharmacy bot (and run RAG orchestration behind the scenes).
 
 
 ---
